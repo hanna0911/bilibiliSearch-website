@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<script type="text/javascript">
+function jumpToMovie() {
+    window.location.href=("/bilibili/movielist/")
+}
+</script>
+
+<div id="content">
+    <section class="sidebar">
+        {% csrf_token %}
+        <form action="/bilibili/userlist" method="get">
+            <input type="text" name="keyword" id="search" placeholder="请输入关键词……"/>
+            <button type="submit" value="搜索" class="searchButton">搜索</button>
+        </form>
+
+        <table width="244" height="56">
+            <tr>
+                <td>
+                    <label class="checkbox"><input class="checkbox" type="radio" name="category" value="movielist" id="movie" onclick="jumpToMovie()"/>视频</label>
+                </td>
+                <td>
+                    <label class="checkbox"><input class="checkbox" type="radio" name="category" value="userlist" id="user" checked="checked"/>用户</label>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="mainContent">
+    {% if info %}
+        <p class="searchinfo">{{ info }}</p>
+    {% else %}
+        <p class="searchinfo">共 {{ count }} 条结果，搜索用时 {{ time }} 秒</p>
+    {% endif %}
+        <div class="productRow">
+            {% for user in users %}
+                <a href="/bilibili/userlist/user/{{ user.id }}">
+                    <article class="productInfo">
+                        <div><img alt="sample" src={{ user.userpicture }}></div>
+                        <p class="price">{{ user.username }}</p>
+                    </article>
+                </a>
+                {% if not forloop.last %}
+                <script>
+                    if({{ forloop.counter }} % 4 == 0){
+                        document.write('</div><div class="productRow">')
+                    }
+                </script>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block page %}
+
+{% if not info %}
+<nav aria-label="Page navigation" style="float: right; padding-right: 3%; padding-bottom: 3%;">
+    <ul class="pagination">
+        <li>
+        {% if users.has_previous %}
+            <a href="?keyword={{ keyword }}&page={{ users.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">上一页</span>
+            </a>
+        {% endif %}
+
+    {% if users.paginator.num_pages == 7 %}
+
+        <script>
+            const current = {{ users.number }}
+            for(var i = 1; i <= 7; i++){
+                if(i == current){
+                    document.write('<span class="current">' + i + '</span>')
+                }
+                else{
+                    document.write('<a class="active" href="?keyword=' + '{{ keyword }}' + '&page=' + i + '">' + i + '</a>')
+                }
+            }
+        </script>
+
+    {% else %}
+
+        {% if users.paginator.num_pages > 6 and users.number > 4 %}
+            <a href="?keyword={{ keyword }}&page=1">1</a>
+            <a href="?keyword={{ keyword }}&page=2">2</a>
+        {% endif %}
+
+        <script type="text/javascript">
+            const current = {{ users.number }}
+            const total = {{ users.paginator.num_pages }}
+            var start = 1, end = {{ users.paginator.num_pages }}
+            if(current > 4 && current <= total - 4){
+               start = current - 2;
+               end = current + 2;
+            }
+            else if(current > 4 && current > total - 4){
+                start = total - 5;
+                end = total;
+            }
+            else{
+                start = 1;
+                end = 6;
+            }
+
+            if(start > 3){
+                document.write(' <span>...</span>')
+            }
+
+            for(;start <= end; start++){
+                if(start <= total && start >= 1){
+                    if(start == current){
+                        document.write('<span class="current">' + current + '</span>')
+                    }
+                    else{
+                        document.write('<a class="active" href="?keyword=' + '{{ keyword }}' + '&page=' + start + '">' + start + '</a>')
+                    }
+                }
+            }
+
+            if(end < total - 2){
+                document.write('<span>...</span>')
+            }
+
+            if(current <= total - 4 && total > 6){
+                document.write('<a class="active" href="?keyword=' + '{{ keyword }}' + '&page=' + (total - 1) + '">' + (total - 1) + '</a>')
+                document.write('<a class="active" href="?keyword=' + '{{ keyword }}' + '&page=' + total + '">' + total + '</a>')
+            }
+
+        </script>
+
+    {% endif %}
+        {% if users.has_next %}
+            <a class='active' href="?keyword={{ keyword }}&page={{ users.next_page_number }}">
+                <span aria-hidden="true">下一页</span>
+            </a>
+        {% endif %}
+
+        </li>
+        <li id="jumpgroup">
+            <script type="text/javascript">
+                function jumpToPage(){
+                    let page = document.getElementById("pageNum").value
+                    window.location.href=("?keyword={{ keyword }}&page="+page)
+                }
+            </script>
+           共 {{ users.paginator.num_pages }} 页，跳转至<input type="text" id="pageNum" size="3"}">页
+            <button type="button" class="btn btn-default btn-sm" onclick=javascript:jumpToPage()>
+                <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+            </button>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>哔哩哔哩 (゜-゜)つロ 干杯~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/itemList.css' %}" rel="stylesheet" type="text/css">
+    <script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="mainWrapper">
+    <header>
+        <div id="logo"> bilibili </div>
+    </header>
+    <section id="offer">
+        <h2>哔哩哔哩 (゜-゜)つロ 干杯~</h2>
+        <p>好玩的视频哒 ≡ω≡</p>
+    </section>
+    {% block main %}
+
+    {% endblock %}
+</div>
+
+{% block page%}
+
+{% endblock %}
+</body>
+</html>

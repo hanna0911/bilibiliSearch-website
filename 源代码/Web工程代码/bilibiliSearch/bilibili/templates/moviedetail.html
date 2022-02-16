@@ -1,0 +1,77 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>哔哩哔哩 (゜-゜)つロ 干杯~</title>
+        <link href="{% static 'css/movieDetail.css' %}" rel="stylesheet" type="text/css">
+        <script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+    </head>
+
+<body>
+<div id="mainwrapper">
+    <header>
+        <div id="logo">bilibili</div>
+        <nav>
+            <a href="/bilibili/movielist" title="Link">视频列表 &nbsp;&nbsp;&nbsp;</a>
+            <a href="/bilibili/userlist" title="Link">&nbsp;&nbsp;&nbsp; 用户列表</a>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="mainContent">
+            <h1><a href={{ movie.movielink }}>{{ movie.moviename }}</a></h1>
+            <h3>{{ movie.movieview }} &nbsp; {{ movie.moviepop }} &nbsp; {{ movie.movielike }}点赞 &nbsp; {{ movie.moviecoin }}投币 &nbsp;{{ movie.moviecollect }}收藏 &nbsp; {{ movie.shareInfo }}分享 &nbsp; {{ movie.moviedate }}</h3>
+            <div id="bannerImage"><a href={{ movie.movielink }}>
+                <script type="text/javascript">
+                    text = '';
+                    switchText = '{{ movie.moviepicture }}';
+                    for(var i = 0; i < switchText.length; i++){
+                        if(switchText[i] != '@'){
+                            text += switchText[i];
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                    text += '@1900w_1200h_100Q_1c.webp';
+                </script>
+                <img src="" onerror="javascript:this.src=text;" alt="">
+            </a></div>
+            <p>{{ movie.moviedescription }}</p>
+            <aside id="authorInfo">
+            <h2>评论区</h2>
+            <ol>
+                {% if movie.moviecomment1 %}
+                    <li>{{ movie.moviecomment1 }}</li>
+                {% endif %}
+                {% if movie.moviecomment2 %}
+                    <li>{{ movie.moviecomment2 }}</li>
+                {% endif %}
+                {% if movie.moviecomment3 %}
+                    <li>{{ movie.moviecomment3 }}</li>
+                {% endif %}
+                {% if movie.moviecomment4 %}
+                    <li>{{ movie.moviecomment4 }}</li>
+                {% endif %}
+                {% if movie.moviecomment5 %}
+                    <li>{{ movie.moviecomment5 }}</li>
+                {% endif %}
+            </ol>
+            </aside>
+        </section>
+        <section id="sidebar">
+            <a href="/bilibili/userlist/user/{{userID}}" title="Link">
+                <h1>{{ movie.username }}</h1>
+            </a>
+            <div id="adimage"><a href="/bilibili/userlist/user/{{userID}}" title="Link"><img src={{ movie.userpicture }} alt=""/></a></div>
+            <nav><ul>
+                <p>{{ movie.userdescription }}</p>
+            </ul></nav>
+        </section>
+    </div>
+    <div id="footerbar"></div>
+</div>
+</body>
+</html>

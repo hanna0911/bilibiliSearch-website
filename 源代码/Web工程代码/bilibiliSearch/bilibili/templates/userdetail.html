@@ -1,0 +1,64 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>哔哩哔哩 (゜-゜)つロ 干杯~</title>
+    <link href="{% static 'css/userDetail.css' %}" rel="stylesheet" type="text/css">
+    <script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+</head>
+
+<body>
+<header>
+    <div class="profileLogo">
+    <p class="logoPlaceholder"><span>bilibili</span></p>
+    <p class="logoPlaceholder2">
+        <span><a class="navbar" href="/bilibili/movielist">视频列表 &nbsp;&nbsp;&nbsp;</a>
+            <a class="navbar" href="/bilibili/userlist">&nbsp;&nbsp;&nbsp; 用户列表</a>
+        </span></p>
+    </div>
+    <div class="profilePhoto">
+        <a href={{ user.userlink }}><img src={{ user.userpicture }} alt="sample" width="259" height="259"></a>
+    </div>
+    <section class="profileHeader">
+        <h1><a href={{ user.userlink }}>{{ user.username }}</a></h1>
+        <h3>{{ user.userfan }}粉丝</h3>
+        <hr>
+        <p>{{ user.userdescription }}</p>
+    </section>
+</header>
+
+<section class="mainContent">
+    <section class="section1">
+        <h2 class="sectionTitle">视频列表</h2>
+        <hr>
+    </section>
+</section>
+</body>
+
+<body>
+<div id="content">
+<section class="mainContent2">
+      <div class="productRow">
+            {% for movie in movies %}
+                <a href="/bilibili/movielist/movie/{{ movie.id }}">
+                    <article class="productInfo">
+                        <div><img alt="sample" src={{ movie.moviepicture }}></div>
+                        <p class="price">{{ movie.moviename }}</p>
+                    </article>
+                </a>
+                {% if not forloop.last %}
+                <script>
+                    if({{ forloop.counter }} % 4 == 0){
+                        document.write('</div><div class="productRow">')
+                    }
+                </script>
+                {% endif %}
+            {% endfor %}
+      </div>
+    </section>
+</div>
+</body>
+</html>

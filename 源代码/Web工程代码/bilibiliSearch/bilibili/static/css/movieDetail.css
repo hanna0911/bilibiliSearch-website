@@ -1,0 +1,234 @@
+@charset "UTF-8";
+#mainwrapper header {
+	/*Header */
+	background-color: rgb(215, 215, 215);
+	overflow: auto;
+	font-family: montserrat, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+#mainwrapper header #logo {
+	/* Company Logo text */
+	width: 28%;
+	float: left;
+	padding-left: 2%;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	color: rgba(146,146,146,1.00);
+}
+#mainwrapper header nav {
+	/*Nav bar containing links in header */
+	text-align: right;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-right: 2%;
+	width: 68%;
+	float: left;
+	color: rgba(146,146,146,1.00);
+}
+header nav a {
+	/* Links in header */
+	padding-right: 2%;
+}
+#content #mainContent h1, #content #mainContent h2 {
+	/* Styling for main headings */
+	color: rgba(146,146,146,1.00);
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+#content #mainContent h1 a {
+	text-decoration: none;
+	/*changed color*/
+	color: rgba(146,146,146,1.00);
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+#content #mainContent h3 {
+	/*Captions ot Taglines */
+	font-family: source-sans-pro, sans-serif;
+	font-style: normal;
+	font-weight: 200;
+	color: rgba(146,146,146,1.00);
+	font-size: medium;
+}
+#content #mainContent #bannerImage {
+	/*Container for main banner image */
+	width: 100%;
+	background-color: rgba(208,207,207,1.00);
+}
+
+#content #mainContent #bannerImage:hover {
+	/*Container for main banner image */
+	opacity: 0.8;
+}
+
+#content #mainContent p {
+	/* All paragraphs under maincontent */
+	color: rgba(146,146,146,1.00);
+	font-family: source-sans-pro, sans-serif;
+	font-style: normal;
+	font-weight: 200;
+	text-align: justify;
+	white-space: pre-line;
+}
+
+#content #mainContent #authorInfo {
+	/* Author info section */
+	background-color: rgb(178, 178, 178);
+}
+#content #mainContent #authorInfo h2, #content #mainContent #authorInfo p, #content #mainContent #authorInfo li {
+	color: rgba(255,255,255,1.00);
+	padding-left: 2%;
+	padding-top: 11px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+#content #mainContent #authorInfo h2 {
+	padding-left: 3%;
+	padding-top: 4%;
+}
+#content #mainContent #authorInfo p {
+	color: rgba(255,255,255,1.00);
+	padding-left: 2%;
+	padding-top: 0px;
+	padding-bottom: 11px;
+	padding-right: 2%;
+}
+#content #mainContent #authorInfo ol {
+	padding-bottom: 18px;
+}
+#content #mainContent #authorInfo li {
+	color: rgba(255,255,255,1.00);
+	padding-left: 2%;
+	padding-top: 0px;
+	padding-bottom: 11px;
+	padding-right: 2%;
+	white-space: pre-line;
+}
+footer article {
+	/* Footer articles */
+	width: 46%;
+	float: left;
+	padding-left: 2%;
+	padding-right: 2%;
+	text-align: justify;
+	font-family: source-sans-pro, sans-serif;
+	font-style: normal;
+	font-weight: 200;
+	color: rgba(146,146,146,1.00);
+}
+footer article h3 {
+	/* Footer article titles */
+	text-align: center;
+	font-family: montserrat, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+#mainContent {
+	/* Container for the blog post in individal blog view */
+	padding-left: 2%;
+	width: 71%;
+	float: left;
+	padding-right: 2%;
+	padding-top: 41px;
+	margin-bottom: 16px;
+}
+#mainwrapper #content #sidebar {
+	/* Sidebar*/
+	width: 19%;
+	padding-left: 2%;
+	padding-right: 2%;
+	float: left;
+	background-color: rgba(246,246,246,1.00);
+	margin-top: 150px;
+	padding-top: 32px;
+}
+#mainwrapper {
+	/* Container of all content */
+	width: 80%;
+	overflow: auto;
+	margin-left: 10%;
+}
+#content #sidebar input {
+	/* Search box in sidebar */
+	width: 98%;
+	height: 32px;
+}
+#content #sidebar a {
+	text-decoration: none;
+}
+
+#content #sidebar h1 {
+	width: 98%;
+	font-size: 18px;
+	margin-top: 4%;
+	color: rgba(138,138,138,1.00);
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+#content #sidebar a h1:hover {
+	opacity: 0.8;
+}
+
+#content #sidebar #adimage {
+	/* Container for Image in sidebar */
+	width: 100%;
+	background-color: rgba(208,207,207,1.00);
+	margin-top: 26px;
+	float: none;
+	overflow: auto;
+}
+#content #sidebar #adimage:hover {
+	/* Container for Image in sidebar */
+	opacity: 0.8;
+}
+
+nav ul li {
+	list-style-type: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+nav ul {
+	padding-left: 0%;
+}
+nav p {
+	color: rgba(138,138,138,1.00);
+	font-family: source-sans-pro, sans-serif;
+	word-wrap: break-word;
+	padding-top: 10%;
+	padding-bottom: 15%;
+}
+nav ul li a {
+	color: rgba(146,146,146,1.00);
+	text-decoration: none;
+}
+#footerbar {
+	/* Footer bar at the bottom of the page */
+	height: 18px;
+	clear: both;
+	background-color: rgb(215, 215, 215);
+	width: 100%;
+}
+
+#mainContent #bannerImage img {
+	/* Actual banner image */
+	width: 100%;
+}
+#sidebar #adimage img {
+	/* Image in sidebar */
+	width: 100%;
+	float: left;
+}
+#mainwrapper header nav a {
+	/* Links in header */
+	color: rgba(146,146,146,1.00);
+	text-decoration: none;
+}
+#mainwrapper header nav a:hover {
+	/* Links in header */
+	opacity: 0.8;
+}
+
+#mainwrapper #mainContent h1 a:hover {
+	/* Links in header */
+	opacity: 0.8;
+}

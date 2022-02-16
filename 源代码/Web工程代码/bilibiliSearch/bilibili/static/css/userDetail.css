@@ -1,0 +1,302 @@
+@charset "utf-8";
+/* Global Styles */
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 88%;
+	padding-left: 4%;
+	padding-right: 4%;
+	margin-bottom: 4%;
+}
+
+/* Header */
+header {
+	text-align: center;
+	display: block;
+	padding-bottom: 0px;
+	margin-bottom: 15%;
+}
+
+header .profileLogo .logoPlaceholder {
+	background-color: rgba(208,207,207,1.00);
+	width: 16%;
+	text-align: left;
+	padding-left: 4%;
+	float: left;
+	height: 53px;
+	margin-top: 0;
+}
+
+header .profileLogo .logoPlaceholder2 {
+	background-color: rgba(208,207,207,1.00);
+	width: 76%;
+	text-align: right;
+	float: left;
+	padding-right: 4%;
+	height: 53px;
+	margin-top: 0;
+}
+
+
+header .logoPlaceholder span {
+	width: 80px;
+	height: 22px;
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(255,255,255,1.00);
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 53px;
+}
+
+header .logoPlaceholder2 span {
+	width: 80px;
+	height: 22px;
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(255,255,255,1.00);
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 53px;
+}
+
+header .logoPlaceholder2 span .navbar {
+	font-size: 16px;
+    font-weight: 500;
+    line-height: 53px;
+	text-decoration: none;
+	color: rgba(255,255,255,1.00);
+}
+header .logoPlaceholder2 span .navbar:hover {
+	opacity: 0.8;
+}
+
+header .profilePhoto {
+	width: 259px;
+	border-radius: 50%;
+	height: 259px;
+	clear: both;
+	padding-left: 5%;
+	padding-top: 4%;
+}
+
+header .profilePhoto img {
+	border-radius: 50%;
+}
+
+header .profilePhoto img:hover {
+	opacity: 0.8;
+}
+
+header .profileHeader {
+	padding-right: 5%;
+}
+
+header .profileHeader h1 {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 24px;
+	text-decoration: none;
+}
+header .profileHeader h1 a{
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 24px;
+	text-decoration: none;
+}
+header .profileHeader h1 a:hover{
+	opacity: 0.8;
+}
+
+header .profileHeader h3 {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+}
+hr {
+	background-color: rgba(208,207,207,1.00);
+	height: 1px;
+}
+header .profileHeader p {
+	font-family: sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.8;
+	overflow-y: auto;
+}
+
+.section1 {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.section1 .sectionTitle, .section2 .sectionTitle {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 19px;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding-left: 1%;
+}
+
+/* main content of the site */
+#content .mainContent2 {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+/*menubar's properties for menus in sidebar */
+#content .sidebar #menubar {
+	text-align: left;
+	color: rgba(146,146,146,1.00);
+	position: relative;
+	left: 0%;
+}
+/* Search field in sidebar */
+#content .sidebar #search {
+	float: left;
+	width: 77%;
+	border-radius: 0px;
+	height: 42px;
+	text-align: center;
+	color: rgba(208,207,207,1.00);
+	font-size: 16px;
+	margin-bottom: -5px;
+	margin-left: 2%;
+}
+/* Whole page content */
+#mainWrapper {
+	width: 95%;
+	padding-left: 2.5%;
+}
+/*menu elements */
+.menu ul li {
+	list-style-type: none;
+	font-size: x-large;
+	position: relative;
+	left: -35px;
+	padding-top: 12px;
+}
+
+
+#content .mainContent2 {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 8%;
+}
+
+/* Product rows for catalog */
+#content .mainContent2 .productRow {
+	overflow: auto;
+	color: rgba(146,146,146,1.00);
+}
+/* Each product Information in the catalog */
+.mainContent2 .productRow .productInfo {
+	float: left;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 4%;
+	width: 23%;
+}
+.mainContent2 .productRow .productInfo:hover {
+	opacity: 0.8;
+}
+
+/* Prices of a products in catalog */
+.productRow {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.productRow .productInfo .price {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(146,146,146,1.00);
+	font-size: 15px;
+	position: relative;
+	top: -16px;
+	word-wrap: break-word;
+	/*word-break: break-all;*/
+	overflow: hidden;
+	text-align: center;
+}
+
+
+/* Product's images in catalog */
+.productInfo div img {
+	width: 100%;
+}
+
+
+
+/* Desktops and laptops  */
+@media only screen and (min-width:1025px) {
+	/* Header */
+	header .profileLogo .logoPlaceholder {
+		float: left;
+		margin-bottom: 50px;
+	}
+	header .profilePhoto {
+		float: left;
+		clear: both;
+		margin-right: 3%;
+	}
+	header .profileHeader {
+		text-align: left;
+		padding-top: 14%;
+	}
+	header .socialNetworkNavBar .socialNetworkNav {
+		width: 74px;
+		height: 74px;
+		display: inline-block;
+		margin-right: 23px;
+	}
+	/* Main content sections */
+	.section1 .sectionTitleRule, .section2 .sectionTitleRule {
+		width: 22.5%;
+	}
+	.mainContent .section1 .section1Content {
+		display: block;
+		margin-top: 0%;
+		margin-right: 0%;
+		margin-left: 26%;
+		margin-bottom: 0%;
+		font-family: sans-serif;
+	}
+	.mainContent .section2 {
+		clear: both;
+	}
+	.section2 .section2Content {
+		padding: 0px;
+		margin-left: 26%;
+		font-family: sans-serif;
+	}
+	.mainContent .externalResourcesNav {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		text-align: center;
+		padding-top: 0px;
+		clear: both;
+	}
+	.mainContent .externalResourcesNav .externalResources {
+		width: 199px;
+		height: 48px;
+	}
+	/* Footer */
+	footer .footerDisclaimer {
+		float: left;
+		margin-left: 3%;
+		font-family: sans-serif;
+	}
+	footer .footerNote {
+		float: right;
+		margin-right: 3%;
+		font-family: sans-serif;
+	}
+}
